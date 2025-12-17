@@ -1,6 +1,30 @@
-import { Link } from "react-router";
+import { useEffect } from "react";
+import { useState } from "react";
+import { Link, useParams } from "react-router";
+
+const BUILDINGS_URL = 'http://localhost:3030/jsonstore/buildings';
 
 export default function BuildingDetails() {
+    const [building, setBuilding] = useState({});
+    const { buildingId } = useParams();
+
+
+    useEffect(() => {
+        (async () => {
+            try {
+                const response = await fetch(`${BUILDINGS_URL}/${buildingId}`);
+
+                const result = await response.json();
+
+                setBuilding(result);
+            } catch (error) {
+                alert(error.message);
+            }
+        }
+
+        )()
+    }, [buildingId])
+
     return (
         <>
             <section className="max-w-6xl mx-auto px-6 py-12">
@@ -37,14 +61,7 @@ export default function BuildingDetails() {
                             <div className="bg-slate-50 rounded-2xl p-6 text-center">
                                 <p className="text-slate-600">Apartments</p>
                                 <p className="text-3xl font-bold text-indigo-600">
-                                    {building.apartmentsCount}
-                                </p>
-                            </div>
-
-                            <div className="bg-slate-50 rounded-2xl p-6 text-center">
-                                <p className="text-slate-600">Residents</p>
-                                <p className="text-3xl font-bold text-emerald-600">
-                                    {building.residentsCount}
+                                    {building.apartmentsAcc}
                                 </p>
                             </div>
                         </div>
