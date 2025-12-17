@@ -1,13 +1,14 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { Link, useParams } from "react-router";
+import { Link, useNavigate, useParams } from "react-router";
+import request from "../utils/request.js";
 
 const BUILDINGS_URL = 'http://localhost:3030/jsonstore/buildings';
 
 export default function BuildingDetails() {
+    const navigate = useNavigate();
     const [building, setBuilding] = useState({});
     const { buildingId } = useParams();
-
 
     useEffect(() => {
         (async () => {
@@ -23,7 +24,22 @@ export default function BuildingDetails() {
         }
 
         )()
-    }, [buildingId])
+    }, [buildingId]);
+
+    const deleteHandler = async () => {
+        const isConfirm = confirm('Are you sure you want to delete this building :', building.address);
+
+        if (!isConfirm) {
+            return;
+        }
+
+        try {
+            await request(`${BUILDINGS_URL}/${buildingId}`, 'DELETE');
+            navigate('/buildings')
+        } catch (error) {
+            alert(error.message);
+        }
+    }
 
     return (
         <>
@@ -75,7 +91,7 @@ export default function BuildingDetails() {
                             Edit
                         </Link>
 
-                        <button className="px-6 py-2 rounded-xl bg-red-500 text-white hover:bg-red-600 transition">
+                        <button onClick={deleteHandler} className="px-6 py-2 rounded-xl bg-red-500 text-white hover:bg-red-600 transition">
                             Delete
                         </button>
                     </div>

@@ -1,7 +1,26 @@
 import { Link } from "react-router";
 import BuildingCard from "../buildingCard/BuildingCard.jsx";
+import { useState } from "react";
+import { useEffect } from "react";
+
+const BUILDINGS_URL = 'http://localhost:3030/jsonstore/buildings';
 
 export default function Home() {
+    const [buildings, setBuildings] = useState([]);
+
+    useEffect(() => {
+        (async () => {
+            const response = await fetch(BUILDINGS_URL);
+
+            const result = await response.json();
+
+            const resBuildings = Object.values(result);
+
+            let output = resBuildings.sort((a, b) => b._createdOn - a._createdOn).slice(0, 2);
+
+            setBuildings(output);
+        })()
+    }, [])
 
     return (
         <>
@@ -51,11 +70,7 @@ export default function Home() {
                             </div>
 
                             <div className="flex gap-6 overflow-x-auto pb-4 scroll-smooth">
-                                <BuildingCard />
-                                <BuildingCard />
-                                <BuildingCard />
-                                <BuildingCard />
-              
+                                {buildings.map(building => <BuildingCard key={building._id} {...building} />)}
                             </div>
                         </div>
                     </div>
