@@ -45,11 +45,11 @@ export default function MessageItem({
 
 
             <div className="px-6 pb-6">
-                <button
+                <button 
                     className="w-full py-2 rounded-xl bg-slate-100 text-slate-700 text-sm font-medium
                      hover:bg-indigo-50 hover:text-indigo-600 transition"
                 >
-                    Open message →
+                    Edit message →
                 </button>
             </div>
 

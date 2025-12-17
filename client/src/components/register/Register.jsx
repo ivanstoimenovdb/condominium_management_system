@@ -1,7 +1,19 @@
+import { useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router";
+import request from "../utils/request.js";
 
+const BUILDINGS_URL = 'http://localhost:3030/jsonstore/buildings';
 
 export default function Register() {
+    const [buildings, setBuildings] = useState([]);
+    useEffect(() => {
+        (async () => {
+            const result = await request(BUILDINGS_URL, 'GET');
+            setBuildings(Object.values(result));
+        })()
+    }, [])
+
     return (
         <section className="min-h-screen flex items-center justify-center bg-slate-50">
             <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow">
@@ -10,7 +22,7 @@ export default function Register() {
                 </h2>
 
                 <form className="space-y-4">
-               
+
                     <div>
                         <label className="block text-sm font-medium text-slate-600">
                             First Name
@@ -22,7 +34,7 @@ export default function Register() {
                         />
                     </div>
 
-                
+
                     <div>
                         <label className="block text-sm font-medium text-slate-600">
                             Sirname
@@ -34,7 +46,7 @@ export default function Register() {
                         />
                     </div>
 
-       
+
                     <div>
                         <label className="block text-sm font-medium text-slate-600">
                             Last Name
@@ -110,13 +122,12 @@ export default function Register() {
                             <option value="" disabled>
                                 Select building
                             </option>
-                            <option value="1">ul. Ivan Vazov 12</option>
-                            <option value="2">bul. Bulgaria 88</option>
-                            <option value="3">ul. Hristo Botev 5</option>
+                            {buildings.map(building => <option value={building._id}>{building.address}</option>)}
+
                         </select>
                     </div>
 
-                 
+
                     <button
                         type="submit"
                         className="w-full mt-4 py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition"

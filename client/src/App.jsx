@@ -23,7 +23,7 @@ function App() {
           <Route path='/buildings/:buildingId/details' element={<BuildingDetails />} />
           <Route path='/dashboard' element={<Feeds />} />
           <Route path='/buildings/create' element={<CreateBuilding />} />
-          <Route path='/buildings/:id/edit' element={<EditBuilding />} />
+          <Route path='/buildings/:buildId/edit' element={<EditBuilding />} />
         </Routes>
 
       </main>
