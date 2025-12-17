@@ -21,14 +21,14 @@ export default function Home() {
                     <div className="mt-6 flex gap-4">
                         <Link
                             to="/login"
-                            className="px-6 py-3 rounded-xl bg-indigo-600 text-white font-semibold hover:bg-indigo-700 shadow-lg transition"
+                            className="px-6 py-3 rounded-xl  bg-white text-indigo-600 font-semibold border hover:bg-indigo-600 hover:text-white shadow-lg transition"
                         >
                             Get Started
                         </Link>
 
                         <Link
                             to="/register"
-                            className="px-6 py-3 rounded-xl bg-white text-indigo-600 font-semibold border hover:bg-slate-50 transition"
+                            className="px-6 py-3 rounded-xl  bg-white text-indigo-600 font-semibold border hover:bg-indigo-600 hover:text-white shadow-lg transition"
                         >
                             Register
                         </Link>
