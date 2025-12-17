@@ -1,11 +1,63 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { Link } from "react-router";
+// import { Link } from "react-router";
 import request from "../utils/request.js";
 
 const BUILDINGS_URL = 'http://localhost:3030/jsonstore/buildings';
+const USERS_URL = 'http://localhost:3030/jsonstore/users';
+const MEMBERSHIPS_URL = 'http://localhost:3030/jsonstore/memberships';
 
 export default function Register() {
+    const [formData, setFormData] = useState({
+        firstName: '',
+        middleName: '',
+        lastName: '',
+        email: '',
+        password: '',
+        repeatPassword: '',
+        role: '',
+        buildingId: ''
+    });
+
+    const onSubmit = async (e) => {
+        e.preventDefault();
+
+        if (formData.password !== formData.repeatPassword) {
+            return alert('Passwords do not match');
+        }
+
+        const newUser = {
+            firstName: formData.firstName,
+            middleName: formData.middleName,
+            lastName: formData.lastName,
+            email: formData.email,
+            role: formData.role,
+            _createdOn: Date.now()
+        };
+
+        const createdUser = await request(USERS_URL, 'POST', newUser);
+
+
+        if (formData.buildingId) {
+            const membership = {
+                userId: createdUser._id,
+                buildingId: formData.buildingId,
+                _createdOn: Date.now()
+            };
+
+            await request(MEMBERSHIPS_URL, 'POST', membership);
+        }
+
+        alert('Registration successful!');
+    };
+
+    const onChange = (e) => {
+        setFormData(state => ({
+            ...state,
+            [e.target.name]: e.target.value
+        }));
+    };
+
     const [buildings, setBuildings] = useState([]);
     useEffect(() => {
         (async () => {
@@ -21,7 +73,7 @@ export default function Register() {
                     Create Account
                 </h2>
 
-                <form className="space-y-4">
+                <form className="space-y-4" onSubmit={onSubmit}>
 
                     <div>
                         <label className="block text-sm font-medium text-slate-600">
@@ -29,6 +81,9 @@ export default function Register() {
                         </label>
                         <input
                             type="text"
+                            name='firstName'
+                            value={formData.firstName}
+                            onChange={onChange}
                             className="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                             placeholder="Name"
                         />
@@ -41,6 +96,9 @@ export default function Register() {
                         </label>
                         <input
                             type="text"
+                            name="sirName"
+                            value={formData.middleName}
+                            onChange={onChange}
                             className="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                             placeholder="Sirname"
                         />
@@ -53,6 +111,9 @@ export default function Register() {
                         </label>
                         <input
                             type="text"
+                            name="lastName"
+                            value={formData.lastName}
+                            onChange={onChange}
                             className="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                             placeholder="Lastname"
                         />
@@ -65,6 +126,9 @@ export default function Register() {
                         </label>
                         <input
                             type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={onChange}
                             className="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                             placeholder="Email"
                         />
@@ -77,6 +141,9 @@ export default function Register() {
                         </label>
                         <input
                             type="password"
+                            name="password"
+                            value={formData.password}
+                            onChange={onChange}
                             className="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                             placeholder="••••••••"
                         />
@@ -89,6 +156,9 @@ export default function Register() {
                         </label>
                         <input
                             type="password"
+                            name="repeatPassword"
+                            value={formData.repeatPassword}
+                            onChange={onChange}
                             className="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                         />
                     </div>
@@ -99,8 +169,11 @@ export default function Register() {
                             Role
                         </label>
                         <select
+                            name="role"
+                            value={formData.role}
+                            onChange={onChange}
                             className="w-full mt-1 px-4 py-2 border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                            defaultValue=""
+          
                         >
                             <option value="" disabled>
                                 Select role
@@ -116,13 +189,16 @@ export default function Register() {
                             Building
                         </label>
                         <select
+                            name="building"
+                            value={formData.buildingId}
+                            onChange={onChange}
                             className="w-full mt-1 px-4 py-2 border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                            defaultValue=""
+                            
                         >
                             <option value="" disabled>
                                 Select building
                             </option>
-                            {buildings.map(building => <option value={building._id}>{building.address}</option>)}
+                            {buildings.map(building => <option key={building._id} value={building._id}>{building.address}</option>)}
 
                         </select>
                     </div>
