@@ -10,7 +10,7 @@ export default function Register() {
                 </h2>
 
                 <form className="space-y-4">
-                    {/* First Name */}
+               
                     <div>
                         <label className="block text-sm font-medium text-slate-600">
                             First Name
@@ -22,7 +22,7 @@ export default function Register() {
                         />
                     </div>
 
-                    {/* Middle Name */}
+                
                     <div>
                         <label className="block text-sm font-medium text-slate-600">
                             Sirname
@@ -34,7 +34,7 @@ export default function Register() {
                         />
                     </div>
 
-                    {/* Last Name */}
+       
                     <div>
                         <label className="block text-sm font-medium text-slate-600">
                             Last Name
@@ -46,7 +46,7 @@ export default function Register() {
                         />
                     </div>
 
-                    {/* Email */}
+
                     <div>
                         <label className="block text-sm font-medium text-slate-600">
                             Email
@@ -58,7 +58,7 @@ export default function Register() {
                         />
                     </div>
 
-                    {/* Password */}
+
                     <div>
                         <label className="block text-sm font-medium text-slate-600">
                             Password
@@ -70,7 +70,7 @@ export default function Register() {
                         />
                     </div>
 
-                    {/* Repeat Password */}
+
                     <div>
                         <label className="block text-sm font-medium text-slate-600">
                             Repeat Password
@@ -81,7 +81,7 @@ export default function Register() {
                         />
                     </div>
 
-                    {/* Role Dropdown */}
+
                     <div>
                         <label className="block text-sm font-medium text-slate-600">
                             Role
@@ -99,7 +99,6 @@ export default function Register() {
                         </select>
                     </div>
 
-                    {/* Building Dropdown */}
                     <div>
                         <label className="block text-sm font-medium text-slate-600">
                             Building
@@ -117,7 +116,7 @@ export default function Register() {
                         </select>
                     </div>
 
-                    {/* Submit */}
+                 
                     <button
                         type="submit"
                         className="w-full mt-4 py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition"

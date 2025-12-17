@@ -2,13 +2,13 @@ import { Link } from "react-router";
 import BuildingCard from "../buildingCard/BuildingCard.jsx";
 
 export default function Home() {
+
     return (
         <>
 
             <section className="min-h-screen bg-gradient-to-br from-slate-50 to-indigo-100 flex items-center">
                 <div className="max-w-6xl mx-auto px-6 flex flex-col items-center text-center">
 
-                    {/* TEXT – TOP */}
                     <h1 className="text-4xl md:text-5xl font-bold leading-tight">
                         Manage Your <br />
                         <span className="text-indigo-600">Buildings Smarter</span>
@@ -34,7 +34,6 @@ export default function Home() {
                         </Link>
                     </div>
 
-                    {/* DASHBOARD PREVIEW – CENTER */}
                     <div className="mt-14 w-full max-w-5xl">
                         <div className="bg-white rounded-3xl shadow-2xl p-6">
 
@@ -51,7 +50,6 @@ export default function Home() {
                                 </Link>
                             </div>
 
-                            {/* Horizontal Scroll */}
                             <div className="flex gap-6 overflow-x-auto pb-4 scroll-smooth">
                                 <BuildingCard />
                                 <BuildingCard />

@@ -6,7 +6,6 @@ export default function Feeds() {
         <div className="mt-14 w-full max-w-5xl">
             <div className="bg-white rounded-3xl p-6 flex flex-col h-[70vh] shadow-md">
 
-                {/* Header (fixed) */}
                 <div className="flex justify-between items-center mb-4">
                     <h4 className="text-base font-semibold text-slate-700">
                         Latest Messages from Residents
@@ -20,11 +19,11 @@ export default function Feeds() {
                     </Link>
                 </div>
 
-                {/* Scrollable Messages */}
+  
                 <div className="flex-1 overflow-y-auto pr-2">
 
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                        {/* MessageItem-и */}
+
                         <MessageItem
                             building="ul. Ivan Vazov 12"
                             author="Ivan Petrov"
@@ -43,7 +42,7 @@ export default function Feeds() {
                             text="Water pressure is low in the morning."
                         />
 
-                        {/* Demo extra items for scroll */}
+
                         <MessageItem
                             building="bul. Bulgaria 45"
                             author="Stoyan Dimitrov"

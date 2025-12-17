@@ -30,7 +30,7 @@ export default function BuildingDetails() {
             <section className="max-w-6xl mx-auto px-6 py-12">
                 <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
 
-                    {/* REAL IMAGE */}
+
                     <img
                         src={building.imageUrl}
                         alt="Building"
@@ -39,7 +39,6 @@ export default function BuildingDetails() {
 
                     <div className="p-8 grid md:grid-cols-2 gap-8">
 
-                        {/* Left */}
                         <div className="space-y-4">
                             <h2 className="text-2xl font-bold text-slate-800">
                                 📍 {building.address}
@@ -56,7 +55,7 @@ export default function BuildingDetails() {
                             </p>
                         </div>
 
-                        {/* Right */}
+
                         <div className="grid grid-cols-2 gap-4">
                             <div className="bg-slate-50 rounded-2xl p-6 text-center">
                                 <p className="text-slate-600">Apartments</p>
@@ -67,7 +66,7 @@ export default function BuildingDetails() {
                         </div>
                     </div>
 
-                    {/* Actions */}
+
                     <div className="border-t px-8 py-6 flex justify-end gap-4">
                         <Link
                             to="/buildings/1/edit"

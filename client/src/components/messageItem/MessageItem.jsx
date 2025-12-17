@@ -2,7 +2,7 @@ export default function MessageItem({ building, author, text }) {
     return (
         <div className="group bg-white rounded-3xl shadow-md hover:shadow-2xl transition transform hover:-translate-y-1">
 
-            {/* Content */}
+
             <div className="p-6 space-y-3">
 
                 <p className="text-xs text-slate-500 flex items-center gap-1">
@@ -19,7 +19,7 @@ export default function MessageItem({ building, author, text }) {
 
             </div>
 
-            {/* Action (optional, keeps parity with BuildingCard) */}
+
             <div className="px-6 pb-6">
                 <button
                     className="w-full py-2 rounded-xl bg-slate-100 text-slate-700 text-sm font-medium
