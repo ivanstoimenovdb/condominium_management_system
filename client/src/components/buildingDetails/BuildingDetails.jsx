@@ -85,7 +85,7 @@ export default function BuildingDetails() {
 
                     <div className="border-t px-8 py-6 flex justify-end gap-4">
                         <Link
-                            to="/buildings/1/edit"
+                            to={`/buildings/${buildingId}/edit`}
                             className="px-6 py-2 rounded-xl bg-indigo-600 text-white hover:bg-indigo-700 transition"
                         >
                             Edit

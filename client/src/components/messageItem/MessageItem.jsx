@@ -1,4 +1,28 @@
-export default function MessageItem({ building, author, text }) {
+import { useEffect } from "react";
+import { useState } from "react";
+import request from "../utils/request.js";
+
+const USER_URL = 'http://localhost:3030/jsonstore/users';
+const BUILDING_URL = 'http://localhost:3030/jsonstore/buildings';
+
+export default function MessageItem({
+    _id,
+    userId,
+    buildingId,
+    message }) {
+    const [user, setUser] = useState({});
+    const [building, setBuilding] = useState({});
+
+    useEffect(() => {
+        (async () => {
+            const userResult = await request(`${USER_URL}/${userId}`, 'GET');
+            const buildingResult = await request(`${BUILDING_URL}/${buildingId}`, 'GET');
+            setUser(userResult);
+            setBuilding(buildingResult);
+
+        })()
+    }, [userId, buildingId])
+
     return (
         <div className="group bg-white rounded-3xl shadow-md hover:shadow-2xl transition transform hover:-translate-y-1">
 
@@ -6,15 +30,15 @@ export default function MessageItem({ building, author, text }) {
             <div className="p-6 space-y-3">
 
                 <p className="text-xs text-slate-500 flex items-center gap-1">
-                    🏢 <span>{building}</span>
+                    🏢 <span>{building.address}</span>
                 </p>
 
                 <p className="text-sm font-semibold text-slate-800">
-                    {author}
+                    {`${user.firstName} ${user.lastName}`}
                 </p>
 
                 <p className="text-slate-600 text-sm leading-snug">
-                    {text}
+                    {message}
                 </p>
 
             </div>

@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import BuildingCard from "../buildingCard/BuildingCard.jsx";
 import { useState } from "react";
 import { useEffect } from "react";
+import request from "../utils/request.js";
 
 const BUILDINGS_URL = 'http://localhost:3030/jsonstore/buildings';
 
@@ -10,9 +11,7 @@ export default function Home() {
 
     useEffect(() => {
         (async () => {
-            const response = await fetch(BUILDINGS_URL);
-
-            const result = await response.json();
+            const result = await request(BUILDINGS_URL, 'GET');
 
             const resBuildings = Object.values(result);
 
