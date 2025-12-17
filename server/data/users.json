@@ -1,0 +1,31 @@
+{
+  "a3f1c9e2-4b6d-4e8f-9a21-112233445566": {
+    "_id": "a3f1c9e2-4b6d-4e8f-9a21-112233445566",
+    "email": "admin@cms.bg",
+    "firstName": "Ivan",
+    "middleName": "Ivanov",
+    "lastName": "Petrov",
+    "role": "admin",
+    "_createdOn": 1710000001000
+  },
+
+  "b7e4d2a9-1c5f-4c3b-8f10-667788990011": {
+    "_id": "b7e4d2a9-1c5f-4c3b-8f10-667788990011",
+    "email": "manager@cms.bg",
+    "firstName": "Maria",
+    "middleName": "Georgieva",
+    "lastName": "Ivanova",
+    "role": "manager",
+    "_createdOn": 1710000002000
+  },
+
+  "c98b7a21-3e5d-4f9c-8b10-998877665544": {
+    "_id": "c98b7a21-3e5d-4f9c-8b10-998877665544",
+    "email": "user@cms.bg",
+    "firstName": "Nikolay",
+    "middleName": "Petrov",
+    "lastName": "Dimitrov",
+    "role": "user",
+    "_createdOn": 1710000003000
+  }
+}

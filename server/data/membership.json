@@ -1,0 +1,29 @@
+{
+  "f1a2b3c4-1111-4aaa-9bbb-111122223333": {
+    "_id": "f1a2b3c4-1111-4aaa-9bbb-111122223333",
+    "userId": "a3f1c9e2-4b6d-4e8f-9a21-112233445566",
+    "buildingId": "5c7d8f0e-3a9b-4c2d-9e1f-6a4b3c8d2e7a",
+    "_createdOn": 1710000100000
+  },
+
+  "f5d6e7f8-2222-4bbb-8ccc-444455556666": {
+    "_id": "f5d6e7f8-2222-4bbb-8ccc-444455556666",
+    "userId": "b7e4d2a9-1c5f-4c3b-8f10-667788990011",
+    "buildingId": "5c7d8f0e-3a9b-4c2d-9e1f-6a4b3c8d2e7a",
+    "_createdOn": 1710000200000
+  },
+
+  "f9g0h1i2-3333-4ccc-7ddd-777788889999": {
+    "_id": "f9g0h1i2-3333-4ccc-7ddd-777788889999",
+    "userId": "c98b7a21-3e5d-4f9c-8b10-998877665544",
+    "buildingId": "5c7d8f0e-3a9b-4c2d-9e1f-6a4b3c8d2e7a",
+    "_createdOn": 1710000300000
+  },
+
+  "f3j4k5l6-4444-4ddd-6eee-000011112222": {
+    "_id": "f3j4k5l6-4444-4ddd-6eee-000011112222",
+    "userId": "c98b7a21-3e5d-4f9c-8b10-998877665544",
+    "buildingId": "7b2e4d9f-5a6c-4b3e-8d21-fedcba987654",
+    "_createdOn": 1710000400000
+  }
+}
