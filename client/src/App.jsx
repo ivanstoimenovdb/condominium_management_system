@@ -6,6 +6,7 @@ import Buildings from './components/buildings/Buildings.jsx'
 import Feeds from './components/feeds/Feeds.jsx'
 import Register from './components/register/Register.jsx'
 import Login from './components/login/Login.jsx'
+import BuildingDetails from './components/buildingDetails/BuildingDetails.jsx'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route index element= {<Home />} />
 
           <Route path='/buildings' element={<Buildings />} />
+          <Route path='/buildings/:buidingId/details' element={<BuildingDetails />} />
           <Route path='/dashboard' element={<Feeds />}/>
           <Route path= '/register' element={<Register />} />
           <Route path= '/login'    element={<Login />} />

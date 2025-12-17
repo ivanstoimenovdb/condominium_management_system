@@ -3,65 +3,129 @@ import { Link } from "react-router";
 
 export default function Register() {
     return (
-        <div className="min-h-screen flex items-center justify-center bg-slate-100 px-4">
-            <div className="w-full max-w-md bg-white rounded-3xl p-8 shadow-md">
+        <section className="min-h-screen flex items-center justify-center bg-slate-50">
+            <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow">
+                <h2 className="text-2xl font-bold text-center mb-6">
+                    Create Account
+                </h2>
 
-                <h1 className="text-2xl font-bold text-center mb-2">
-                    Create account
-                </h1>
-                <p className="text-center text-slate-500 mb-8">
-                    Join the condominium platform
-                </p>
-
-                <form className="space-y-5">
+                <form className="space-y-4">
+                    {/* First Name */}
                     <div>
-                        <label className="block text-sm font-medium text-slate-600 mb-1">
+                        <label className="block text-sm font-medium text-slate-600">
+                            First Name
+                        </label>
+                        <input
+                            type="text"
+                            className="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            placeholder="Name"
+                        />
+                    </div>
+
+                    {/* Middle Name */}
+                    <div>
+                        <label className="block text-sm font-medium text-slate-600">
+                            Sirname
+                        </label>
+                        <input
+                            type="text"
+                            className="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            placeholder="Sirname"
+                        />
+                    </div>
+
+                    {/* Last Name */}
+                    <div>
+                        <label className="block text-sm font-medium text-slate-600">
+                            Last Name
+                        </label>
+                        <input
+                            type="text"
+                            className="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            placeholder="Lastname"
+                        />
+                    </div>
+
+                    {/* Email */}
+                    <div>
+                        <label className="block text-sm font-medium text-slate-600">
                             Email
                         </label>
                         <input
                             type="email"
-                            placeholder="you@example.com"
-                            className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            placeholder="Email"
                         />
                     </div>
 
+                    {/* Password */}
                     <div>
-                        <label className="block text-sm font-medium text-slate-600 mb-1">
+                        <label className="block text-sm font-medium text-slate-600">
                             Password
                         </label>
                         <input
                             type="password"
+                            className="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                             placeholder="••••••••"
-                            className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                         />
                     </div>
 
+                    {/* Repeat Password */}
                     <div>
-                        <label className="block text-sm font-medium text-slate-600 mb-1">
-                            Confirm Password
+                        <label className="block text-sm font-medium text-slate-600">
+                            Repeat Password
                         </label>
                         <input
                             type="password"
-                            placeholder="••••••••"
-                            className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                         />
                     </div>
 
+                    {/* Role Dropdown */}
+                    <div>
+                        <label className="block text-sm font-medium text-slate-600">
+                            Role
+                        </label>
+                        <select
+                            className="w-full mt-1 px-4 py-2 border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            defaultValue=""
+                        >
+                            <option value="" disabled>
+                                Select role
+                            </option>
+                            <option value="admin">Admin</option>
+                            <option value="manager">Домоуправител</option>
+                            <option value="user">Потребител</option>
+                        </select>
+                    </div>
+
+                    {/* Building Dropdown */}
+                    <div>
+                        <label className="block text-sm font-medium text-slate-600">
+                            Building
+                        </label>
+                        <select
+                            className="w-full mt-1 px-4 py-2 border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            defaultValue=""
+                        >
+                            <option value="" disabled>
+                                Select building
+                            </option>
+                            <option value="1">ul. Ivan Vazov 12</option>
+                            <option value="2">bul. Bulgaria 88</option>
+                            <option value="3">ul. Hristo Botev 5</option>
+                        </select>
+                    </div>
+
+                    {/* Submit */}
                     <button
                         type="submit"
-                        className="w-full py-3 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition"
+                        className="w-full mt-4 py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition"
                     >
                         Register
                     </button>
                 </form>
-
-                <p className="text-center text-sm text-slate-500 mt-6">
-                    Already have an account?{" "}
-                    <Link to="/login" className="text-blue-600 hover:underline">
-                        Login
-                    </Link>
-                </p>
             </div>
-        </div>
+        </section>
     );
 }
