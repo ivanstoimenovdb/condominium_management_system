@@ -1,0 +1,67 @@
+{
+  "5c7d8f0e-3a9b-4c2d-9e1f-6a4b3c8d2e7a": {
+    "_id": "5c7d8f0e-3a9b-4c2d-9e1f-6a4b3c8d2e7a",
+    "address": "Sofia, ul. Ivan Vazov 12",
+    "manager": "Ivan Petrov",
+    "entranceFee": 15,
+    "apartmentsAcc": 24,
+    "imageUrl": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+    "_createdOn": 1710000000000,
+    "_ownerId": "user-1"
+  },
+
+  "9a8b7c6d-1234-4abc-9def-abcdef123456": {
+    "_id": "9a8b7c6d-1234-4abc-9def-abcdef123456",
+    "address": "Sofia, bul. Bulgaria 88",
+    "manager": "Maria Ivanova",
+    "entranceFee": 20,
+    "apartmentsAcc": 36,
+    "imageUrl": "https://images.unsplash.com/photo-1599423300746-b62533397364",
+    "_createdOn": 1710001000000,
+    "_ownerId": "user-2"
+  },
+
+  "3f1a9c2e-7b4d-4e8a-9f21-123456789abc": {
+    "_id": "3f1a9c2e-7b4d-4e8a-9f21-123456789abc",
+    "address": "Plovdiv, ul. Kapitan Raycho 5",
+    "manager": "Georgi Todorov",
+    "entranceFee": 12,
+    "apartmentsAcc": 18,
+    "imageUrl": "https://images.unsplash.com/photo-1523217582562-09d0def993a6",
+    "_createdOn": 1710002000000,
+    "_ownerId": "user-3"
+  },
+
+  "7b2e4d9f-5a6c-4b3e-8d21-fedcba987654": {
+    "_id": "7b2e4d9f-5a6c-4b3e-8d21-fedcba987654",
+    "address": "Varna, ul. Slivnitsa 42",
+    "manager": "Nikolay Dimitrov",
+    "entranceFee": 18,
+    "apartmentsAcc": 30,
+    "imageUrl": "https://images.unsplash.com/photo-1501183638710-841dd1904471",
+    "_createdOn": 1710003000000,
+    "_ownerId": "user-1"
+  },
+
+  "a12c9e44-6d8f-4c1b-9a22-112233445566": {
+    "_id": "a12c9e44-6d8f-4c1b-9a22-112233445566",
+    "address": "Burgas, ul. Aleksandrovska 77",
+    "manager": "Petya Koleva",
+    "entranceFee": 14,
+    "apartmentsAcc": 22,
+    "imageUrl": "https://images.unsplash.com/photo-1502673530728-f79b4cab31b1",
+    "_createdOn": 1710004000000,
+    "_ownerId": "user-4"
+  },
+
+  "c98b7a21-3e5d-4f9c-8b10-998877665544": {
+    "_id": "c98b7a21-3e5d-4f9c-8b10-998877665544",
+    "address": "Ruse, ul. Borisova 31",
+    "manager": "Dimitar Stoyanov",
+    "entranceFee": 16,
+    "apartmentsAcc": 28,
+    "imageUrl": "https://images.unsplash.com/photo-1494526585095-c41746248156",
+    "_createdOn": 1710005000000,
+    "_ownerId": "user-2"
+  }
+}
